@@ -1,0 +1,9 @@
+Welcome to the Container Service!
+
+NOTE: This system is namespaced.
+The namespace you are currently in may not be the root.
+System services are namespaced; to access, use `ctr -n services.linuxkit ...`
+
+1) Checking service logs
+
+2) Accessing a system service
