@@ -1,0 +1,11 @@
+build:
+  image: registry.cern.ch/docker.io/library/ubuntu:20.04
+  only:
+    - branches
+  script:
+    - apt-get update; apt-get install -y qemu-system-x86 wget; wget https://github.com/linuxkit/linuxkit/releases/download/v0.8/linuxkit-linux-amd64 -O /usr/bin/linuxkit; chmod 755 /usr/bin/linuxkit
+    - linuxkit build -format qcow2-bios linuxkit.yml
+  artifacts:
+    paths:
+      - linuxkit.qcow2
+    expire_in: 1 month
